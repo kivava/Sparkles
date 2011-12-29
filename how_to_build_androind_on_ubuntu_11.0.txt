@@ -1,0 +1,29 @@
+
+1. Library install
+sudo apt-get install git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev libc6-dev g++-multilib lib32ncurses5-dev ia32-libs x11proto-core-dev libx11-dev lib32readline5-dev lib32z-dev libgl1-mesa-dev
+
+2. Java version
+sudo add-apt-repository "deb http://archive.canonical.com/ maverick partner"
+sudo add-apt-repository "deb-src http://archive.canonical.com/ubuntu maverick partner"
+sudo apt-get update
+sudo apt-get install sun-java6-jdk
+
+3. USB connected check
+Make sure that your Ubuntu machine can use your USB devices by creating 
+/etc/udev/rules.d/51-android.rules (as root user) paste the following 
+inside that file:
+
+# adb protocol on passion (Nexus One)
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e12", MODE="0600", OWNER="<username>"
+# fastboot protocol on passion (Nexus One)
+SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0fff", MODE="0600", OWNER="<username>"
+# adb protocol on crespo (Nexus S)
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e22", MODE="0600", OWNER="<username>"
+# fastboot protocol on crespo (Nexus S)
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e20", MODE="0600", OWNER="<username>"
+
+4. glib-mkenums: command not found
+   sudo apt-get install libglib2.0-dev
+
+5. glib-genmarshal command not found
+   sudo apt-get install libglib2.0-dev

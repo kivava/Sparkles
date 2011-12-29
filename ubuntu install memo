@@ -1,0 +1,50 @@
+route add default gw 192.168.118.1
+route del default gw 172.19.92.254
+route add -net 172.19.92.0/24 gw 172.19.92.254 eth1
+route add -net 172.19.0.0/16 gw 172.19.92.254 eth1
+
+route add -net 10.0.0.0/8 gw 172.19.92.254 eth1
+
+echo nameserver 172.19.34.1 >> /etc/resolv.conf 
+
+
+
+sudo apt-get install geany tmux meld
+
+sudo apt-get install nautilus-gksu nautilus-open-terminal
+
+sudo apt-get install qgit
+
+sudo apt-get install virtualbox-ose
+
+
+
+
+
+
+sudo apt-get install smbfs
+
+
+http://opensuse.swerdna.org/susesambacifs.html
+sudo mount -t cifs //172.19.92.46/data ~/git-server -U kivava-chang
+
+sudo mount -t cifs //172.19.92.46/data ~/data -o username=kivava-chang,noexec,uid=1000
+
+sudo mount -t cifs //172.19.92.46/kivava-chang ~/tcsw46 -o username=kivava-chang,noexec,uid=1000
+
+
+smbclient -U kivava-chang -L \\172.19.92.46
+
+
+sudo mount.cifs //172.19.92.46/data /home/kivava/data -o user=kivava-chang,pass=kivava.chang,dom=WORKGROUP
+
+
+//172.19.92.46/data /home/kivava/data  cifs credentials=/home/kivava/.smbcred,noexec,uid=1000 0 0
+
+//172.19.92.46/kivava-chang /home/kivava/tcsw46 cifs credentials=/home/kivava/.smbcred,noexec,uid=1000 0 0
+
+
+
+
+
+

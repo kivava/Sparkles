@@ -1,0 +1,3 @@
+use /dev/ttyS0
+hardware traffic control OFF
+rate is 38400, 8N1

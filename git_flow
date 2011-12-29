@@ -1,0 +1,35 @@
+## Git flow
+
+### Initial fetch and branches
+
+git clone gitosis@172.19.92.47:honeycomb_brian.git 
+
+git checkout -b sp3_ori origin/marvell_honeycomb_beta1_sp3
+
+git checkout -b dev origin/marvell_honeycomb_beta1_sp3
+
+
+git branck -av
+
+./build.sh all eng
+
+
+### Make the clean original branch up-to-date
+
+git checkout sp3_ori 
+
+git fetch 
+git pull
+
+### Rebase the dev 
+
+
+git checkout dev 
+
+git rebase sp3_ori 
+
+git checkout sp3_ori 
+
+git merge dev 
+
+git branch -av
